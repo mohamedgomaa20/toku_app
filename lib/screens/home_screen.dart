@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/screens/family_member_screen.dart';
 import 'package:toku_app/screens/numbers_screen.dart';
 
 import '../models/category_model.dart';
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
       subtitle: "Learn family vocabulary",
       color: Color(0xff578a36),
       icon: Icons.family_restroom,
-      widget: NumbersScreen(),
+      widget: FamilyMemberScreen(),
     ),
     CategoryModel(
       title: "Colors",

@@ -1,7 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/screens/numbers_screen.dart';
+
+import '../models/category_model.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  final List<CategoryModel> categories = const [
+    CategoryModel(
+      title: "Numbers",
+      subtitle: "Learn counting in German",
+      color: Color(0xfff09137),
+      icon: Icons.looks_one,
+      widget: NumbersScreen(),
+    ),
+    CategoryModel(
+      title: "Family Members",
+      subtitle: "Learn family vocabulary",
+      color: Color(0xff578a36),
+      icon: Icons.family_restroom,
+      widget: NumbersScreen(),
+    ),
+    CategoryModel(
+      title: "Colors",
+      subtitle: "Learn color names",
+      color: Color(0xff79329f),
+      icon: Icons.palette,
+      widget: NumbersScreen(),
+    ),
+    CategoryModel(
+      title: "Phrases",
+      subtitle: "Learn common phrases",
+      color: Color(0xff50acc9),
+      icon: Icons.chat_bubble,
+      widget: NumbersScreen(),
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     BoxShadow(
                       color: Colors.black.withOpacity(.2),
                       blurRadius: 10,
-                      offset: Offset(0, 8),
+                      offset: Offset(0, 5),
                     ),
                   ],
                 ),
@@ -131,42 +165,12 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 15),
               Expanded(
-                child: ListView(
+                child: ListView.separated(
+                  itemCount: categories.length,
+                  separatorBuilder: (context, index) => SizedBox(height: 15),
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  children: [
-                    BuildCategoryItem(
-                      onTap: () => print("Numbers"),
-                      title: "Numbers",
-                      subtitle: "Learn counting in German",
-                      color: Color(0xfff09137),
-                      icon: Icons.looks_one,
-                    ),
-                    SizedBox(height: 15),
-                    BuildCategoryItem(
-                      onTap: () => print("Family Members"),
-                      title: "Family Members",
-                      subtitle: "Learn family vocabulary",
-                      color: Color(0xff578a36),
-                      icon: Icons.family_restroom,
-                    ),
-                    SizedBox(height: 15),
-                    BuildCategoryItem(
-                      onTap: () => print("Colors"),
-                      title: "Colors",
-                      subtitle: "Learn color names",
-                      color: Color(0xff79329f),
-                      icon: Icons.palette,
-                    ),
-                    SizedBox(height: 15),
-                    BuildCategoryItem(
-                      onTap: () => print("Phrases"),
-                      title: "Phrases",
-                      subtitle: "Learn common phrases",
-                      color: Color(0xff50acc9),
-                      icon: Icons.chat_bubble,
-                    ),
-                    SizedBox(height: 20),
-                  ],
+                  itemBuilder: (context, index) =>
+                      BuildCategoryItem(categoryModel: categories[index]),
                 ),
               ),
             ],
@@ -178,25 +182,19 @@ class HomeScreen extends StatelessWidget {
 }
 
 class BuildCategoryItem extends StatelessWidget {
-  const BuildCategoryItem({
-    super.key,
-    required this.title,
-    required this.subtitle,
-    required this.color,
-    required this.icon,
-    required this.onTap,
-  });
+  const BuildCategoryItem({super.key, required this.categoryModel});
 
-  final String title;
-  final String subtitle;
-  final Color color;
-  final IconData icon;
-  final VoidCallback onTap;
+  final CategoryModel categoryModel;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => categoryModel.widget),
+        );
+      },
       child: Container(
         height: 95,
         decoration: BoxDecoration(
@@ -204,12 +202,12 @@ class BuildCategoryItem extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: [color, color.withOpacity(0.8)],
+            colors: [categoryModel.color, categoryModel.color.withOpacity(0.8)],
           ),
 
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(.5),
+              color: categoryModel.color.withOpacity(.5),
               blurRadius: 15,
               offset: Offset(0, 8),
             ),
@@ -254,7 +252,11 @@ class BuildCategoryItem extends StatelessWidget {
                       color: Colors.white.withOpacity(.25),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Icon(icon, size: 32, color: Colors.white),
+                    child: Icon(
+                      categoryModel.icon,
+                      size: 32,
+                      color: Colors.white,
+                    ),
                   ),
                   SizedBox(width: 15),
 
@@ -264,7 +266,7 @@ class BuildCategoryItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          title,
+                          categoryModel.title,
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -273,7 +275,7 @@ class BuildCategoryItem extends StatelessWidget {
                         ),
                         SizedBox(height: 4),
                         Text(
-                          subtitle,
+                          categoryModel.subtitle,
                           style: TextStyle(
                             fontSize: 13,
 

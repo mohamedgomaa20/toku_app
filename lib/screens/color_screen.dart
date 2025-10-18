@@ -4,69 +4,71 @@ import 'package:flutter/material.dart';
 import '../models/number_model.dart';
 import '../widgets/build_item.dart';
 
-class FamilyMembersScreen extends StatelessWidget {
-  const FamilyMembersScreen({super.key});
+class ColorsScreen extends StatelessWidget {
+  const ColorsScreen({super.key});
 
-  final List<Item> familyMembers = const [
+  final List<Item> colors = const [
     Item(
-      imagePath: 'assets/images/family_members/family_father.png',
-      sound: 'father.wav',
-      jpName: 'Chichioya',
-      enName: 'father',
+      imagePath: 'assets/images/colors/color_black.png',
+      sound: 'black.wav',
+      jpName: 'Burakku',
+      enName: 'black',
+    ),
+
+    Item(
+      imagePath: 'assets/images/colors/color_brown.png',
+      sound: 'brown.wav',
+      jpName: 'Chairo',
+      enName: 'brown',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_mother.png',
-      sound: 'mother.wav',
-      jpName: 'Hahaoya',
-      enName: 'mother',
+      imagePath: 'assets/images/colors/color_dusty_yellow.png',
+      sound: 'dusty yellow.wav',
+      jpName: 'Hokori ppoi kiiro',
+      enName: 'dusty yellow',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_grandfather.png',
-      sound: 'grand father.wav',
-      jpName: 'Ojīsan',
-      enName: 'grand father',
+      imagePath: 'assets/images/colors/color_gray.png',
+      sound: 'gray.wav',
+      jpName: 'Gurē',
+      enName: 'gray',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_grandmother.png',
-      sound: 'grand mother.wav',
-      jpName: 'Sobo',
-      enName: 'grand mother',
+      imagePath: 'assets/images/colors/color_green.png',
+      sound: 'green.wav',
+      jpName: 'Midori',
+      enName: 'green',
+    ),
+
+    Item(
+      imagePath: 'assets/images/colors/color_red.png',
+      sound: 'red.wav',
+      jpName: 'Aka',
+      enName: 'red',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_son.png',
-      sound: 'son.wav',
-      jpName: 'Musuko',
-      enName: 'son',
+      imagePath: 'assets/images/colors/color_white.png',
+      sound: 'white.wav',
+      jpName: 'Shiroi',
+      enName: 'white',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_daughter.png',
-      sound: 'daughter.wav',
-      jpName: 'Musume',
-      enName: 'daughter',
+      imagePath: 'assets/images/colors/yellow.png',
+      sound: 'yellow.wav',
+      jpName: 'Kiiro',
+      enName: 'yellow',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_older_brother.png',
-      sound: 'older bother.wav',
-      jpName: 'Nīsan',
-      enName: 'older brother',
+      imagePath: 'assets/images/colors/color_black.png',
+      sound: 'black.wav',
+      jpName: 'Burakku',
+      enName: 'black',
     ),
     Item(
-      imagePath: 'assets/images/family_members/family_older_sister.png',
-      sound: 'older sister.wav',
-      jpName: 'Ane',
-      enName: 'older sister',
-    ),
-    Item(
-      imagePath: 'assets/images/family_members/family_younger_brother.png',
-      sound: 'younger brohter.wav',
-      jpName: 'Otōto',
-      enName: 'younger brother',
-    ),
-    Item(
-      imagePath: 'assets/images/family_members/family_younger_sister.png',
-      sound: 'younger sister.wav',
-      jpName: 'Imōto',
-      enName: 'younger sister',
+      imagePath: 'assets/images/colors/color_brown.png',
+      sound: 'brown.wav',
+      jpName: 'Chairo',
+      enName: 'brown',
     ),
   ];
 
@@ -116,14 +118,10 @@ class FamilyMembersScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 15),
-                    Icon(
-                      Icons.family_restroom,
-                      color: Color(0xff578a36),
-                      size: 28,
-                    ),
+                    Icon(Icons.palette, color: Color(0xff79329f), size: 28),
                     SizedBox(width: 10),
                     Text(
-                      "Family Members",
+                      "Colors",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -137,10 +135,10 @@ class FamilyMembersScreen extends StatelessWidget {
                         horizontal: 12,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xff578a36).withOpacity(.3),
+                        color: Color(0xff79329f).withOpacity(.3),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: Color(0xff578a36).withOpacity(.5),
+                          color: Color(0xff79329f).withOpacity(.5),
                           width: 1.5,
                         ),
                       ),
@@ -149,7 +147,7 @@ class FamilyMembersScreen extends StatelessWidget {
                           Icon(Icons.list, color: Colors.white, size: 16),
                           SizedBox(width: 5),
                           Text(
-                            "${familyMembers.length}",
+                            "${colors.length}",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -185,12 +183,12 @@ class FamilyMembersScreen extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Color(0xff578a36).withOpacity(0.2),
+                        color: Color(0xff79329f).withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(
                         CupertinoIcons.info,
-                        color: Color(0xff578a36),
+                        color: Color(0xff79329f),
                         size: 24,
                       ),
                     ),
@@ -210,13 +208,13 @@ class FamilyMembersScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: familyMembers.length,
+                  itemCount: colors.length,
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
-                    item: familyMembers[index],
-                    itemType: "family_members",
-                    colorOne: Color(0xff578a36),
-                    colorTwo: Color(0xff6ba045),
+                    item: colors[index],
+                    itemType: "colors",
+                    colorOne: Color(0xff79329f),
+                    colorTwo: Color(0xff9345bf),
                   ),
                 ),
               ),

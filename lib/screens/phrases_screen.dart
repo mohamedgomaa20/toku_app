@@ -1,72 +1,62 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toku_app/widgets/build_phrases_item.dart';
 
-import '../models/number_model.dart';
-import '../widgets/build_item.dart';
+import '../models/phrases_model.dart';
 
-class FamilyMembersScreen extends StatelessWidget {
-  const FamilyMembersScreen({super.key});
+class PhrasesScreen extends StatelessWidget {
+  const PhrasesScreen({super.key});
 
-  final List<Item> familyMembers = const [
-    Item(
-      imagePath: 'assets/images/family_members/family_father.png',
-      sound: 'father.wav',
-      jpName: 'Chichioya',
-      enName: 'father',
+  final List<Phrases> phrases = const [
+    Phrases(
+      sound: 'what_is_your_name.wav',
+      jpName: 'namae wa nandesuka',
+      enName: 'what is your name',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_mother.png',
-      sound: 'mother.wav',
-      jpName: 'Hahaoya',
-      enName: 'mother',
+    Phrases(
+      sound: 'where_are_you_going.wav',
+      jpName: 'Doko ni iku no',
+      enName: 'where are you going',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_grandfather.png',
-      sound: 'grand father.wav',
-      jpName: 'Ojīsan',
-      enName: 'grand father',
+    Phrases(
+      sound: 'are_you_coming.wav',
+      jpName: 'Kimasu ka',
+      enName: 'are you coming',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_grandmother.png',
-      sound: 'grand mother.wav',
-      jpName: 'Sobo',
-      enName: 'grand mother',
+    Phrases(
+      sound: 'yes_im_coming.wav',
+      jpName: 'Hai, watashi wa kite imasu',
+      enName: 'yes i\'m coming',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_son.png',
-      sound: 'son.wav',
-      jpName: 'Musuko',
-      enName: 'son',
+    Phrases(
+      sound: 'how_are_you_feeling.wav',
+      jpName: 'Go kibun wa ikagadesu ka',
+      enName: 'how are you feeling',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_daughter.png',
-      sound: 'daughter.wav',
-      jpName: 'Musume',
-      enName: 'daughter',
+    Phrases(
+      sound: 'i_love_anime.wav',
+      jpName: 'Watashi wa anime ga daisukidesu',
+      enName: 'i love anime',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_older_brother.png',
-      sound: 'older bother.wav',
-      jpName: 'Nīsan',
-      enName: 'older brother',
+    Phrases(
+      sound: 'i_love_programming.wav',
+      jpName: 'Watashi wa puroguramingu ga daisukidesu',
+      enName: 'i love programming',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_older_sister.png',
-      sound: 'older sister.wav',
-      jpName: 'Ane',
-      enName: 'older sister',
+    Phrases(
+      sound: 'programming_is_easy.wav',
+      jpName: 'Puroguramingu wa kantandesu',
+      enName: 'programming is easy',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_younger_brother.png',
-      sound: 'younger brohter.wav',
-      jpName: 'Otōto',
-      enName: 'younger brother',
+    Phrases(
+      sound: 'dont_forget_to_subscribe.wav',
+      jpName: 'Kōdoku suru koto o wasurenaide kudasai',
+      enName: 'don\'t forget to subscribe',
     ),
-    Item(
-      imagePath: 'assets/images/family_members/family_younger_sister.png',
-      sound: 'younger sister.wav',
-      jpName: 'Imōto',
-      enName: 'younger sister',
+    Phrases(
+      sound: 'i_love_anime.wav',
+      jpName: 'Watashi wa anime ga daisukidesu',
+      enName: 'i love anime',
     ),
   ];
 
@@ -116,14 +106,10 @@ class FamilyMembersScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(width: 15),
-                    Icon(
-                      Icons.family_restroom,
-                      color: Color(0xff578a36),
-                      size: 28,
-                    ),
+                    Icon(Icons.chat_bubble, color: Color(0xff50acc9), size: 28),
                     SizedBox(width: 10),
                     Text(
-                      "Family Members",
+                      "Phrases",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -137,10 +123,10 @@ class FamilyMembersScreen extends StatelessWidget {
                         horizontal: 12,
                       ),
                       decoration: BoxDecoration(
-                        color: Color(0xff578a36).withOpacity(.3),
+                        color: Color(0xff50acc9).withOpacity(.3),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: Color(0xff578a36).withOpacity(.5),
+                          color: Color(0xff50acc9).withOpacity(.5),
                           width: 1.5,
                         ),
                       ),
@@ -149,7 +135,7 @@ class FamilyMembersScreen extends StatelessWidget {
                           Icon(Icons.list, color: Colors.white, size: 16),
                           SizedBox(width: 5),
                           Text(
-                            "${familyMembers.length}",
+                            "${phrases.length}",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -185,12 +171,12 @@ class FamilyMembersScreen extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Color(0xff578a36).withOpacity(0.2),
+                        color: Color(0xff50acc9).withOpacity(0.2),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(
                         CupertinoIcons.info,
-                        color: Color(0xff578a36),
+                        color: Color(0xff50acc9),
                         size: 24,
                       ),
                     ),
@@ -210,13 +196,13 @@ class FamilyMembersScreen extends StatelessWidget {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: familyMembers.length,
+                  itemCount: phrases.length,
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  itemBuilder: (context, index) => BuildItem(
-                    item: familyMembers[index],
-                    itemType: "family_members",
-                    colorOne: Color(0xff578a36),
-                    colorTwo: Color(0xff6ba045),
+                  itemBuilder: (context, index) => BuildPhrasesItem(
+                    item: phrases[index],
+                    itemType: "phrases",
+                    colorOne: Color(0xff50acc9),
+                    colorTwo: Color(0xff65bcd4),
                   ),
                 ),
               ),

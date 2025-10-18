@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/screens/color_screen.dart';
 import 'package:toku_app/screens/family_member_screen.dart';
 import 'package:toku_app/screens/numbers_screen.dart';
+import 'package:toku_app/screens/phrases_screen.dart';
 
 import '../models/category_model.dart';
 
@@ -20,21 +22,21 @@ class HomeScreen extends StatelessWidget {
       subtitle: "Learn family vocabulary",
       color: Color(0xff578a36),
       icon: Icons.family_restroom,
-      widget: FamilyMemberScreen(),
+      widget: FamilyMembersScreen(),
     ),
     CategoryModel(
       title: "Colors",
       subtitle: "Learn color names",
       color: Color(0xff79329f),
       icon: Icons.palette,
-      widget: NumbersScreen(),
+      widget: ColorsScreen(),
     ),
     CategoryModel(
       title: "Phrases",
       subtitle: "Learn common phrases",
       color: Color(0xff50acc9),
       icon: Icons.chat_bubble,
-      widget: NumbersScreen(),
+      widget: PhrasesScreen(),
     ),
   ];
 

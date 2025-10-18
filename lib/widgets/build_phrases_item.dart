@@ -1,10 +1,9 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:toku_app/models/phrases_model.dart';
 
-import '../models/number_model.dart';
-
-class BuildItem extends StatefulWidget {
-  const BuildItem({
+class BuildPhrasesItem extends StatefulWidget {
+  const BuildPhrasesItem({
     super.key,
     required this.item,
     required this.colorOne,
@@ -12,16 +11,16 @@ class BuildItem extends StatefulWidget {
     required this.itemType,
   });
 
-  final Item item;
+  final Phrases item;
   final Color colorOne;
   final Color colorTwo;
   final String itemType;
 
   @override
-  State<BuildItem> createState() => _BuildItemState();
+  State<BuildPhrasesItem> createState() => _BuildPhrasesItemState();
 }
 
-class _BuildItemState extends State<BuildItem> {
+class _BuildPhrasesItemState extends State<BuildPhrasesItem> {
   bool isPlaying = false;
   AudioPlayer? audioPlayer;
   Duration duration = Duration.zero;
@@ -83,25 +82,18 @@ class _BuildItemState extends State<BuildItem> {
           ),
           Row(
             children: [
+              SizedBox(width: 16),
               Container(
-                height: 100,
-                width: 100,
+                width: 60,
+                height: 60,
                 decoration: BoxDecoration(
-                  color: Color(0xfffff4db),
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    topLeft: Radius.circular(20),
-                  ),
+                  color: Colors.white.withOpacity(0.25),
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    bottomLeft: Radius.circular(20),
-                  ),
-                  child: Image.asset(widget.item.imagePath, fit: BoxFit.cover),
-                ),
+                child: Icon(Icons.format_quote, color: Colors.white, size: 32),
               ),
               SizedBox(width: 16),
+
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,9 +103,11 @@ class _BuildItemState extends State<BuildItem> {
                       widget.item.jpName,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     SizedBox(height: 4),
 
@@ -130,16 +124,18 @@ class _BuildItemState extends State<BuildItem> {
                         widget.item.enName,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 12),
+                padding: EdgeInsets.symmetric(horizontal: 12),
                 child: GestureDetector(
                   onTap: () async {
                     if (isPlaying) {
@@ -151,6 +147,7 @@ class _BuildItemState extends State<BuildItem> {
                     }
                     audioPlayer ??= AudioPlayer();
                     await audioPlayer?.stop();
+
                     setState(() {
                       isPlaying = true;
                     });

@@ -5,13 +5,13 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.icon,
     required this.title,
-    required this.lengthOfList,
+    this.lengthOfList,
     required this.color,
   });
 
   final IconData icon;
   final String title;
-  final int lengthOfList;
+  final int? lengthOfList;
   final Color color;
 
   @override
@@ -59,27 +59,28 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
-            decoration: BoxDecoration(
-              color: color.withOpacity(.3),
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: color.withOpacity(.5), width: 1.5),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.list, color: Colors.white, size: 16),
-                SizedBox(width: 5),
-                Text(
-                  "$lengthOfList",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+          if (lengthOfList != null)
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+              decoration: BoxDecoration(
+                color: color.withOpacity(.3),
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: color.withOpacity(.5), width: 1.5),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.list, color: Colors.white, size: 16),
+                  SizedBox(width: 5),
+                  Text(
+                    "$lengthOfList",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
         ],
       ),
     );

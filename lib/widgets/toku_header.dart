@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/screens/about_screen.dart';
 
 class TokuHeader extends StatelessWidget {
   const TokuHeader({super.key});
@@ -47,6 +48,16 @@ class TokuHeader extends StatelessWidget {
                 style: TextStyle(fontSize: 13, color: Colors.white70),
               ),
             ],
+          ),
+          Spacer(),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AboutScreen()),
+              );
+            },
+            icon: Icon(Icons.info_outline, color: Colors.white),
           ),
         ],
       ),

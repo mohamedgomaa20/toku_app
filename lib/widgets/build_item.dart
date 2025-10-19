@@ -1,7 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-import '../models/number_model.dart';
+import '../models/item_model.dart';
 
 class BuildItem extends StatefulWidget {
   const BuildItem({
@@ -98,7 +98,7 @@ class _BuildItemState extends State<BuildItem> {
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),
                   ),
-                  child: Image.asset(widget.item.imagePath, fit: BoxFit.cover),
+                  child: Image.asset(widget.item.imagePath!, fit: BoxFit.cover),
                 ),
               ),
               SizedBox(width: 16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/number_model.dart';
+import '../models/item_model.dart';
 import '../widgets/build_item.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/info_card.dart';

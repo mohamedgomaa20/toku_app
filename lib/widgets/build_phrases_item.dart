@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:toku_app/models/phrases_model.dart';
+
+import '../models/item_model.dart';
 
 class BuildPhrasesItem extends StatefulWidget {
   const BuildPhrasesItem({
@@ -11,7 +12,7 @@ class BuildPhrasesItem extends StatefulWidget {
     required this.itemType,
   });
 
-  final Phrases item;
+  final Item item;
   final Color colorOne;
   final Color colorTwo;
   final String itemType;

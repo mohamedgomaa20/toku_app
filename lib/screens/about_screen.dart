@@ -78,10 +78,19 @@ class AboutScreen extends StatelessWidget {
                         onTap: () {},
                       ),
                       SizedBox(height: 30),
-                      ConnectWithMeSection(
-                        onGithub: () {},
-                        onLinkedIn: () {},
-                        onWebsite: () {},
+
+                      TweenAnimationBuilder(
+                        tween: Tween<double>(begin: 0, end: 1),
+                        duration: Duration(seconds: 1),
+                        builder: (context, value, child) {
+                          return Opacity(opacity: value, child: child);
+                        },
+
+                        child: ConnectWithMeSection(
+                          onGithub: () {},
+                          onLinkedIn: () {},
+                          onWebsite: () {},
+                        ),
                       ),
                       SizedBox(height: 30),
                       AppInfoCard(

@@ -4,7 +4,7 @@ import 'package:toku_app/widgets/build_contact_card.dart';
 import 'package:toku_app/widgets/custom_app_bar.dart';
 
 import '../models/user_model.dart';
-import '../widgets/conncet_with_me_scetion.dart';
+import '../widgets/connect_with_me_section.dart';
 import '../widgets/name_and_job_title_section.dart';
 import '../widgets/profile_image_section.dart';
 

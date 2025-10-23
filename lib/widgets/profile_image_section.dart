@@ -13,7 +13,10 @@ class ProfileImageSection extends StatelessWidget {
       duration: Duration(milliseconds: 800),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, value, child) {
-        return Transform.scale(scale: value, child: child);
+        return Transform.scale(
+          scale: value,
+          child: Opacity(opacity: value, child: child),
+        );
       },
       child: Container(
         width: 150,

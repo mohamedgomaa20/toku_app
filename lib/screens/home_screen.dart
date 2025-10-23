@@ -81,8 +81,10 @@ class HomeScreen extends StatelessWidget {
                   itemCount: categories.length,
                   separatorBuilder: (context, index) => SizedBox(height: 15),
                   padding: EdgeInsets.symmetric(horizontal: 20),
-                  itemBuilder: (context, index) =>
-                      BuildCategoryItem(categoryModel: categories[index]),
+                  itemBuilder: (context, index) => BuildCategoryItem(
+                    categoryModel: categories[index],
+                    delay: index * 150,
+                  ),
                 ),
               ),
             ],

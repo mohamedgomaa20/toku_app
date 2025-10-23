@@ -12,17 +12,17 @@ class PhrasesScreen extends StatelessWidget {
     Item(
       sound: 'what_is_your_name.wav',
       jpName: 'namae wa nandesuka',
-      enName: 'what is your name',
+      enName: 'what is your name?',
     ),
     Item(
       sound: 'where_are_you_going.wav',
       jpName: 'Doko ni iku no',
-      enName: 'where are you going',
+      enName: 'where are you going?',
     ),
     Item(
       sound: 'are_you_coming.wav',
       jpName: 'Kimasu ka',
-      enName: 'are you coming',
+      enName: 'are you coming?',
     ),
     Item(
       sound: 'yes_im_coming.wav',
@@ -32,7 +32,7 @@ class PhrasesScreen extends StatelessWidget {
     Item(
       sound: 'how_are_you_feeling.wav',
       jpName: 'Go kibun wa ikagadesu ka',
-      enName: 'how are you feeling',
+      enName: 'how are you feeling?',
     ),
     Item(
       sound: 'i_love_anime.wav',

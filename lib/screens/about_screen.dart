@@ -79,19 +79,12 @@ class AboutScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 30),
 
-                      TweenAnimationBuilder(
-                        tween: Tween<double>(begin: 0, end: 1),
-                        duration: Duration(seconds: 1),
-                        builder: (context, value, child) {
-                          return Opacity(opacity: value, child: child);
-                        },
-
-                        child: ConnectWithMeSection(
-                          onGithub: () {},
-                          onLinkedIn: () {},
-                          onWebsite: () {},
-                        ),
+                      ConnectWithMeSection(
+                        onGithub: () {},
+                        onLinkedIn: () {},
+                        onWebsite: () {},
                       ),
+
                       SizedBox(height: 30),
                       AppInfoCard(
                         appIcon: Icons.school,

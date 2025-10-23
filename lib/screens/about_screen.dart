@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:toku_app/widgets/app_info_card.dart';
 import 'package:toku_app/widgets/build_contact_card.dart';
 import 'package:toku_app/widgets/custom_app_bar.dart';
-
+import 'package:toku_app/utils/app_colors.dart';
 import '../models/user_model.dart';
 import '../widgets/connect_with_me_section.dart';
 import '../widgets/name_and_job_title_section.dart';
@@ -28,20 +28,14 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xfffff4db), Color(0xfffef5e0), Color(0xfffdf6e3)],
-          ),
-        ),
+        decoration: BoxDecoration(gradient: AppColors.backgroundGradientWidget),
         child: SafeArea(
           child: Column(
             children: [
               CustomAppBar(
                 icon: Icons.person,
                 title: "About Developer",
-                color: Color(0xfff09137),
+                color: AppColors.aboutColorOne,
               ),
 
               Expanded(

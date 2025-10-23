@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -19,12 +20,10 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xff48302c), Color(0xff5d3c37)],
-        ),
+        gradient: AppColors.appBarGradientWidget,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.2),
+            color: AppColors.black.withOpacity(.2),
             blurRadius: 10,
             offset: Offset(0, 5),
           ),
@@ -38,11 +37,11 @@ class CustomAppBar extends StatelessWidget {
               padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.white.withOpacity(.2),
+                color: AppColors.white.withOpacity(.2),
               ),
               child: Icon(
                 Icons.arrow_back_ios_new,
-                color: Colors.white,
+                color: AppColors.white,
                 size: 20,
               ),
             ),
@@ -53,7 +52,7 @@ class CustomAppBar extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.white,
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
@@ -69,12 +68,12 @@ class CustomAppBar extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(Icons.list, color: Colors.white, size: 16),
+                  Icon(Icons.list, color: AppColors.white, size: 16),
                   SizedBox(width: 5),
                   Text(
                     "$lengthOfList",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

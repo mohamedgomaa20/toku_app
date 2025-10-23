@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toku_app/screens/about_screen.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class TokuHeader extends StatelessWidget {
   const TokuHeader({super.key});
@@ -9,12 +10,10 @@ class TokuHeader extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [Color(0xff48302c), Color(0xff5d3c37)],
-        ),
+        gradient: AppColors.appBarGradientWidget,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.2),
+            color: AppColors.black.withOpacity(.2),
             blurRadius: 10,
             offset: Offset(0, 5),
           ),
@@ -25,10 +24,10 @@ class TokuHeader extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.2),
+              color: AppColors.white.withOpacity(.2),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(Icons.school, color: Colors.white, size: 28),
+            child: Icon(Icons.school, color: AppColors.white, size: 28),
           ),
           SizedBox(width: 15),
           Column(
@@ -38,14 +37,14 @@ class TokuHeader extends StatelessWidget {
                 "Toku",
                 style: TextStyle(
                   fontSize: 26,
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1,
                 ),
               ),
               Text(
                 "Learn Japanese",
-                style: TextStyle(fontSize: 13, color: Colors.white70),
+                style: TextStyle(fontSize: 13, color: AppColors.white70),
               ),
             ],
           ),
@@ -57,7 +56,7 @@ class TokuHeader extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => AboutScreen()),
               );
             },
-            icon: Icon(Icons.info_outline, color: Colors.white),
+            icon: Icon(Icons.info_outline, color: AppColors.white),
           ),
         ],
       ),

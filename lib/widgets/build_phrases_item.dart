@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/item_model.dart';
 
@@ -137,7 +138,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                   ),
                   child: Icon(
                     Icons.format_quote,
-                    color: Colors.white,
+                    color: AppColors.white,
                     size: 32,
                   ),
                 ),
@@ -151,7 +152,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                       Text(
                         widget.item.jpName,
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -166,13 +167,13 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.25),
+                          color: AppColors.white.withOpacity(.25),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           widget.item.enName,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: AppColors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),
@@ -224,10 +225,12 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                       height: 50,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white.withOpacity(_isPlaying ? 0.4 : 0.3),
+                        color: AppColors.white.withOpacity(
+                          _isPlaying ? 0.4 : 0.3,
+                        ),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.white.withOpacity(.3),
+                            color: AppColors.white.withOpacity(.3),
                             blurRadius: _isPlaying ? 15 : 8,
                             spreadRadius: _isPlaying ? 2 : 0,
                           ),
@@ -240,7 +243,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                         curve: Curves.easeOutBack,
                         child: Icon(
                           _isPlaying ? Icons.stop : Icons.play_arrow,
-                          color: Colors.white,
+                          color: AppColors.white,
                           size: 30,
                         ),
                       ),

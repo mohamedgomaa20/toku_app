@@ -1,6 +1,7 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/item_model.dart';
 
@@ -112,7 +113,7 @@ class _BuildItemState extends State<BuildItem>
                 height: 80,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white.withOpacity(.1),
+                  color: AppColors.white.withOpacity(.1),
                 ),
               ),
             ),
@@ -134,7 +135,7 @@ class _BuildItemState extends State<BuildItem>
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
-                    color: Color(0xfffff4db),
+                    color: AppColors.creamColor,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       topLeft: Radius.circular(20),
@@ -160,7 +161,7 @@ class _BuildItemState extends State<BuildItem>
                       Text(
                         widget.item.jpName,
                         style: TextStyle(
-                          color: Colors.white,
+                          color: AppColors.white,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
@@ -173,13 +174,13 @@ class _BuildItemState extends State<BuildItem>
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.25),
+                          color: AppColors.white.withOpacity(.25),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
                           widget.item.enName,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: AppColors.white,
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
                           ),
@@ -243,7 +244,7 @@ class _BuildItemState extends State<BuildItem>
                         scale: isPlaying ? 1.1 : 1.0,
                         child: Icon(
                           isPlaying ? Icons.stop : Icons.play_arrow,
-                          color: Colors.white,
+                          color: AppColors.white,
                           size: 30,
                         ),
                       ),

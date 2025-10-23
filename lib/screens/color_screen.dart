@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/item_model.dart';
+import '../utils/app_colors.dart';
 import '../widgets/build_item.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/info_card.dart';
@@ -77,23 +78,17 @@ class ColorsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xfffff4db), Color(0xfffef5e0), Color(0xfffdf6e3)],
-          ),
-        ),
+        decoration: BoxDecoration(gradient: AppColors.backgroundGradientWidget),
         child: SafeArea(
           child: Column(
             children: [
               CustomAppBar(
                 title: "Colors",
-                color: Color(0xff79329f),
+                color: AppColors.colorsColorOne,
                 icon: Icons.palette,
                 lengthOfList: colors.length,
               ),
-              InfoCard(color: Color(0xff79329f)),
+              InfoCard(color: AppColors.colorsColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: colors.length,
@@ -102,8 +97,8 @@ class ColorsScreen extends StatelessWidget {
                     item: colors[index],
                     itemType: "colors",
                     delay: (index * 60).clamp(0, 300),
-                    colorOne: Color(0xff79329f),
-                    colorTwo: Color(0xff9345bf),
+                    colorOne: AppColors.colorsColorOne,
+                    colorTwo: AppColors.colorsColorTwo,
                   ),
                 ),
               ),

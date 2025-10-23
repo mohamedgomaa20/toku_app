@@ -3,6 +3,7 @@ import 'package:toku_app/widgets/build_phrases_item.dart';
 import 'package:toku_app/widgets/info_card.dart';
 
 import '../models/item_model.dart';
+import '../utils/app_colors.dart';
 import '../widgets/custom_app_bar.dart';
 
 class PhrasesScreen extends StatelessWidget {
@@ -65,23 +66,17 @@ class PhrasesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xfffff4db), Color(0xfffef5e0), Color(0xfffdf6e3)],
-          ),
-        ),
+        decoration: BoxDecoration(gradient: AppColors.backgroundGradientWidget),
         child: SafeArea(
           child: Column(
             children: [
               CustomAppBar(
                 title: "Phrases",
-                color: Color(0xff50acc9),
-                icon: Icons.list,
+                color: AppColors.phrasesColorOne,
+                icon: Icons.chat_bubble,
                 lengthOfList: phrases.length,
               ),
-              InfoCard(color: Color(0xff50acc9)),
+              InfoCard(color: AppColors.phrasesColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: phrases.length,
@@ -90,8 +85,8 @@ class PhrasesScreen extends StatelessWidget {
                     item: phrases[index],
                     itemType: "phrases",
                     delay: (index * 60).clamp(0, 300),
-                    colorOne: Color(0xff50acc9),
-                    colorTwo: Color(0xff65bcd4),
+                    colorOne: AppColors.phrasesColorOne,
+                    colorTwo: AppColors.phrasesColorTwo,
                   ),
                 ),
               ),

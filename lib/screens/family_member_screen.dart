@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/item_model.dart';
+import '../utils/app_colors.dart';
 import '../widgets/build_item.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/info_card.dart';
@@ -75,37 +76,28 @@ class FamilyMembersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xfffff4db), Color(0xfffef5e0), Color(0xfffdf6e3)],
-          ),
-        ),
+        decoration: BoxDecoration(gradient: AppColors.backgroundGradientWidget),
         child: SafeArea(
           child: Column(
             children: [
               CustomAppBar(
                 title: "Family Members",
-                color: Color(0xff578a36),
+                color: AppColors.familyColorOne,
                 icon: Icons.family_restroom,
                 lengthOfList: familyMembers.length,
               ),
-              InfoCard(color: Color(0xff578a36)),
+              InfoCard(color: AppColors.familyColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: familyMembers.length,
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  itemBuilder: (context, index) {
-                    print("index * 80 =${index * 80}");
-                    return BuildItem(
-                      item: familyMembers[index],
-                      itemType: "family_members",
-                      delay: (index * 60).clamp(0, 300),
-                      colorOne: Color(0xff578a36),
-                      colorTwo: Color(0xff6ba045),
-                    );
-                  },
+                  itemBuilder: (context, index) => BuildItem(
+                    item: familyMembers[index],
+                    itemType: "family_members",
+                    delay: (index * 60).clamp(0, 300),
+                    colorOne: AppColors.familyColorOne,
+                    colorTwo: AppColors.familyColorTwo,
+                  ),
                 ),
               ),
             ],

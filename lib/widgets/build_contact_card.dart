@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class BuildContactCard extends StatelessWidget {
   const BuildContactCard({
@@ -37,13 +38,13 @@ class BuildContactCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
               colors: [
-                Colors.white.withOpacity(0.7),
-                Colors.white.withOpacity(0.5),
+                AppColors.white.withOpacity(0.7),
+                AppColors.white.withOpacity(0.5),
               ],
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(.05),
+                color: AppColors.black.withOpacity(.05),
                 blurRadius: 10,
                 offset: Offset(0, 5),
               ),
@@ -57,10 +58,10 @@ class BuildContactCard extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Color(0xfff09137).withOpacity(.2),
+                  color: AppColors.aboutColorOne.withOpacity(.2),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(icon, color: Color(0xfff09137), size: 24),
+                child: Icon(icon, color: AppColors.aboutColorOne, size: 24),
               ),
               SizedBox(width: 15),
               Expanded(
@@ -72,8 +73,8 @@ class BuildContactCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: hasArrow ? 14 : 16,
                         color: hasArrow
-                            ? Color(0xff48302c).withOpacity(0.7)
-                            : Color(0xff48302c),
+                            ? AppColors.darkBrown.withOpacity(0.7)
+                            : AppColors.darkBrown,
                         fontWeight: hasArrow
                             ? FontWeight.w600
                             : FontWeight.bold,
@@ -88,8 +89,8 @@ class BuildContactCard extends StatelessWidget {
                             ? FontWeight.bold
                             : FontWeight.normal,
                         color: hasArrow
-                            ? Color(0xff48302c)
-                            : Color(0xff48302c).withOpacity(0.8),
+                            ? AppColors.darkBrown
+                            : AppColors.darkBrown.withOpacity(0.8),
                         height: 1.5,
                       ),
                     ),
@@ -99,7 +100,7 @@ class BuildContactCard extends StatelessWidget {
               hasArrow
                   ? Icon(
                       Icons.arrow_forward_ios,
-                      color: Color(0xff48302c).withOpacity(0.3),
+                      color: AppColors.darkBrown.withOpacity(0.3),
                       size: 18,
                     )
                   : SizedBox(width: 10),

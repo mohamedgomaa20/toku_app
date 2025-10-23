@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import 'build_social_button.dart';
 
@@ -29,7 +30,7 @@ class ConnectWithMeSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Color(0xff48302c),
+              color: AppColors.darkBrown,
             ),
           ),
           SizedBox(height: 15),
@@ -37,19 +38,19 @@ class ConnectWithMeSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               BuildSocialButton(
-                color: Color(0xff333333),
+                color: AppColors.darkGray,
                 icon: Icons.code,
                 onTap: () {},
               ),
               SizedBox(width: 15),
               BuildSocialButton(
-                color: Color(0xff0077b5),
+                color: AppColors.primaryBlue,
                 icon: Icons.work,
                 onTap: () {},
               ),
               SizedBox(width: 15),
               BuildSocialButton(
-                color: Color(0xfff09137),
+                color: AppColors.aboutColorOne,
                 icon: Icons.language,
                 onTap: () {},
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/user_model.dart';
 
@@ -24,7 +25,7 @@ class NameAndJobTitleSection extends StatelessWidget {
           Text(
             userDeveloper.developerName,
             style: TextStyle(
-              color: Color(0xff48302c),
+              color: AppColors.darkBrown,
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
@@ -34,12 +35,10 @@ class NameAndJobTitleSection extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(
-                colors: [Color(0xfff09137), Color(0xfff5a855)],
-              ),
+              gradient: AppColors.aboutGradientWidget,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.orange.withOpacity(.3),
+                  color: AppColors.orange.withOpacity(.3),
                   blurRadius: 10,
                   offset: Offset(0, 5),
                 ),
@@ -49,7 +48,7 @@ class NameAndJobTitleSection extends StatelessWidget {
             child: Text(
               userDeveloper.joTitle,
               style: TextStyle(
-                color: Colors.white,
+                color: AppColors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

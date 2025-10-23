@@ -3,6 +3,7 @@ import 'package:toku_app/screens/color_screen.dart';
 import 'package:toku_app/screens/family_member_screen.dart';
 import 'package:toku_app/screens/numbers_screen.dart';
 import 'package:toku_app/screens/phrases_screen.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/category_model.dart';
 import '../widgets/build_category_item.dart';
@@ -15,29 +16,29 @@ class HomeScreen extends StatelessWidget {
   final List<CategoryModel> categories = const [
     CategoryModel(
       title: "Numbers",
-      subtitle: "Learn counting in German",
-      color: Color(0xfff09137),
+      subtitle: "Learn counting in Japanese",
+      color: AppColors.numbersColorOne,
       icon: Icons.looks_one,
       widget: NumbersScreen(),
     ),
     CategoryModel(
       title: "Family Members",
       subtitle: "Learn family vocabulary",
-      color: Color(0xff578a36),
+      color: AppColors.familyColorOne,
       icon: Icons.family_restroom,
       widget: FamilyMembersScreen(),
     ),
     CategoryModel(
       title: "Colors",
       subtitle: "Learn color names",
-      color: Color(0xff79329f),
+      color: AppColors.colorsColorOne,
       icon: Icons.palette,
       widget: ColorsScreen(),
     ),
     CategoryModel(
       title: "Phrases",
       subtitle: "Learn common phrases",
-      color: Color(0xff50acc9),
+      color: AppColors.phrasesColorOne,
       icon: Icons.chat_bubble,
       widget: PhrasesScreen(),
     ),
@@ -47,13 +48,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xfffff4db), Color(0xfffef5e0), Color(0xfffdf6e3)],
-          ),
-        ),
+        decoration: BoxDecoration(gradient: AppColors.backgroundGradientWidget),
         child: SafeArea(
           child: Column(
             children: [
@@ -70,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xff48302c),
+                      color: AppColors.darkBrown,
                     ),
                   ),
                 ),
@@ -83,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   itemBuilder: (context, index) => BuildCategoryItem(
                     categoryModel: categories[index],
-                    delay: index * 80,
+                    delay: index * 150,
                   ),
                 ),
               ),

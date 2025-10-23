@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard({super.key, required this.color});
@@ -14,11 +14,14 @@ class InfoCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
-          colors: [Colors.white.withOpacity(.7), Colors.white.withOpacity(.5)],
+          colors: [
+            AppColors.white.withOpacity(.7),
+            AppColors.white.withOpacity(.5),
+          ],
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(.05),
+            color: AppColors.black.withOpacity(.05),
             blurRadius: 10,
             offset: Offset(0, 4),
           ),
@@ -39,7 +42,7 @@ class InfoCard extends StatelessWidget {
             child: Text(
               "Tap the play button to hear pronunciation",
               style: TextStyle(
-                color: Color(0xff48302c),
+                color: AppColors.darkBrown,
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
               ),

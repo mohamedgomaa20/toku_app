@@ -19,11 +19,24 @@ dependencies:
   just_audio: ^0.10.5
 
 dev_dependencies:
+  flutter_native_splash: ^2.4.1
+  flutter_launcher_icons: ^0.14.2
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
 
-  flutter_lints: ^5.0.0
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo_1.jpg"
+
+flutter_native_splash:
+  image: assets/logo_splash.jpg
+  android: true
+  ios: true
+  color: '#ffffff'
+
 
 
 flutter:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/user_model.dart';
 
@@ -27,12 +28,9 @@ class ProfileImageSection extends StatelessWidget {
             image: AssetImage(userDeveloper.image),
           ),
           shape: BoxShape.circle,
-          gradient: LinearGradient(
-            colors: [Color(0xff48302c), Color(0xff5d3c37)],
-          ),
           boxShadow: [
             BoxShadow(
-              color: Color(0xff48302c).withOpacity(.4),
+              color: AppColors.darkBrown.withOpacity(.4),
               blurRadius: 10,
               offset: Offset(0, 10),
             ),

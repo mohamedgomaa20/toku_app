@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 import '../models/category_model.dart';
 
@@ -125,7 +126,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                     height: 100,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.1),
+                      color: AppColors.white.withOpacity(0.1),
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -138,7 +139,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                     height: 80,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: Colors.white.withOpacity(0.08),
+                      color: AppColors.white.withOpacity(0.08),
                     ),
                   ),
                 ),
@@ -151,13 +152,13 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                         height: 60,
                         width: 60,
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(.25),
+                          color: AppColors.white.withOpacity(.25),
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Icon(
                           widget.categoryModel.icon,
                           size: 32,
-                          color: Colors.white,
+                          color: AppColors.white,
                         ),
                       ),
                       SizedBox(width: 15),
@@ -172,7 +173,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.white,
+                                color: AppColors.white,
                               ),
                             ),
                             SizedBox(height: 4),
@@ -181,7 +182,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                               style: TextStyle(
                                 fontSize: 13,
 
-                                color: Colors.white.withOpacity(.85),
+                                color: AppColors.white.withOpacity(.85),
                               ),
                             ),
                           ],
@@ -190,7 +191,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                       Icon(
                         Icons.arrow_forward_ios_outlined,
                         size: 20,
-                        color: Colors.white.withOpacity(0.8),
+                        color: AppColors.white.withOpacity(0.8),
                       ),
                     ],
                   ),

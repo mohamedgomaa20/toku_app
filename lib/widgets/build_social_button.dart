@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class BuildSocialButton extends StatelessWidget {
   const BuildSocialButton({
@@ -30,7 +31,7 @@ class BuildSocialButton extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(icon, color: Colors.white, size: 28),
+        child: Icon(icon, color: AppColors.white, size: 28),
       ),
     );
   }

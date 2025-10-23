@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 
 class AppInfoCard extends StatelessWidget {
   const AppInfoCard({
@@ -37,7 +38,7 @@ class AppInfoCard extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(.05),
+              color: AppColors.darkBrown.withOpacity(.05),
               blurRadius: 10,
               offset: Offset(0, 4),
             ),
@@ -46,13 +47,13 @@ class AppInfoCard extends StatelessWidget {
 
         child: Column(
           children: [
-            Icon(appIcon, size: 40, color: Color(0xff48302c)),
+            Icon(appIcon, size: 45, color: AppColors.darkBrown),
             SizedBox(height: 10),
             Text(
               appName,
               style: TextStyle(
                 fontSize: 22,
-                color: Color(0xff48302c),
+                color: AppColors.darkBrown,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -61,7 +62,7 @@ class AppInfoCard extends StatelessWidget {
               appDescription,
               style: TextStyle(
                 fontSize: 14,
-                color: Color(0xff48302c).withOpacity(.7),
+                color: AppColors.darkBrown.withOpacity(.7),
               ),
             ),
             SizedBox(height: 8),
@@ -69,7 +70,7 @@ class AppInfoCard extends StatelessWidget {
               "Version $appVersion",
               style: TextStyle(
                 fontSize: 12,
-                color: Color(0xff48302c).withOpacity(.5),
+                color: AppColors.darkBrown.withOpacity(.5),
               ),
             ),
           ],

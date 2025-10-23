@@ -101,6 +101,7 @@ class ColorsScreen extends StatelessWidget {
                   itemBuilder: (context, index) => BuildItem(
                     item: colors[index],
                     itemType: "colors",
+                    delay: (index * 60).clamp(0, 300),
                     colorOne: Color(0xff79329f),
                     colorTwo: Color(0xff9345bf),
                   ),

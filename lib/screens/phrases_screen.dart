@@ -89,6 +89,7 @@ class PhrasesScreen extends StatelessWidget {
                   itemBuilder: (context, index) => BuildPhrasesItem(
                     item: phrases[index],
                     itemType: "phrases",
+                    delay: (index * 60).clamp(0, 300),
                     colorOne: Color(0xff50acc9),
                     colorTwo: Color(0xff65bcd4),
                   ),

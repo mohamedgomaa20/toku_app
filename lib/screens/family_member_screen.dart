@@ -96,12 +96,16 @@ class FamilyMembersScreen extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: familyMembers.length,
                   padding: EdgeInsets.symmetric(horizontal: 16),
-                  itemBuilder: (context, index) => BuildItem(
-                    item: familyMembers[index],
-                    itemType: "family_members",
-                    colorOne: Color(0xff578a36),
-                    colorTwo: Color(0xff6ba045),
-                  ),
+                  itemBuilder: (context, index) {
+                    print("index * 80 =${index * 80}");
+                    return BuildItem(
+                      item: familyMembers[index],
+                      itemType: "family_members",
+                      delay: (index * 60).clamp(0, 300),
+                      colorOne: Color(0xff578a36),
+                      colorTwo: Color(0xff6ba045),
+                    );
+                  },
                 ),
               ),
             ],

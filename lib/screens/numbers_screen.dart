@@ -99,6 +99,7 @@ class NumbersScreen extends StatelessWidget {
                   itemBuilder: (context, index) => BuildItem(
                     item: numbers[index],
                     itemType: "numbers",
+                    delay: (index * 60).clamp(0, 300),
                     colorOne: Color(0xfff09137),
                     colorTwo: Color(0xfff5a855),
                   ),

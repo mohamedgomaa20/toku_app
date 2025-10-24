@@ -27,7 +27,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, value, child) {
         return Transform.translate(
@@ -37,7 +37,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
       },
 
       child: AnimatedScale(
-        duration: Duration(milliseconds: 150),
+        duration: const Duration(milliseconds: 150),
         scale: isPressed ? 0.97 : 1,
         child: Material(
           color: Colors.transparent,
@@ -52,7 +52,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
             splashColor: AppColors.aboutColorOne.withOpacity(0.2),
             highlightColor: AppColors.aboutColorOne.withOpacity(0.1),
             child: Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
@@ -65,7 +65,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
                   BoxShadow(
                     color: AppColors.black.withOpacity(.05),
                     blurRadius: 10,
-                    offset: Offset(0, 5),
+                    offset: const Offset(0, 5),
                   ),
                 ],
               ),
@@ -75,7 +75,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
                     : CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: AppColors.aboutColorOne.withOpacity(.2),
                       borderRadius: BorderRadius.circular(12),
@@ -86,7 +86,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
                       size: 24,
                     ),
                   ),
-                  SizedBox(width: 15),
+                  const SizedBox(width: 15),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,7 +103,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
                                 : FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 6),
+                        const SizedBox(height: 6),
                         Text(
                           widget.subtitle,
                           style: TextStyle(
@@ -126,7 +126,7 @@ class _BuildContactCardState extends State<BuildContactCard> {
                           color: AppColors.darkBrown.withOpacity(0.3),
                           size: 18,
                         )
-                      : SizedBox(width: 10),
+                      : const SizedBox(width: 10),
                 ],
               ),
             ),

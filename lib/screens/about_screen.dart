@@ -27,9 +27,9 @@ class AboutScreen extends StatelessWidget {
   );
 
   Future<void> _launchUrl(url) async {
-    Uri _url = Uri.parse(url);
-    if (await canLaunchUrl(_url)) {
-      await launchUrl(_url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
@@ -41,7 +41,7 @@ class AboutScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              CustomAppBar(
+              const CustomAppBar(
                 icon: Icons.person,
                 title: "About Developer",
                 color: AppColors.aboutColorOne,
@@ -49,15 +49,15 @@ class AboutScreen extends StatelessWidget {
 
               Expanded(
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     children: [
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       ProfileImageSection(userDeveloper: userDeveloper),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       NameAndJobTitleSection(userDeveloper: userDeveloper),
 
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       BuildContactCard(
                         hasArrow: false,
                         icon: Icons.info_outline,
@@ -66,7 +66,7 @@ class AboutScreen extends StatelessWidget {
                         onTap: () {},
                       ),
 
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       BuildContactCard(
                         icon: Icons.email,
                         title: "Email",
@@ -75,7 +75,7 @@ class AboutScreen extends StatelessWidget {
                           _launchUrl("mailto:${userDeveloper.email}");
                         },
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       BuildContactCard(
                         icon: Icons.phone,
                         title: "Phone",
@@ -84,7 +84,7 @@ class AboutScreen extends StatelessWidget {
                           _launchUrl("tel:${userDeveloper.phone}");
                         },
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
 
                       ConnectWithMeSection(
                         onTapGithub: () {
@@ -102,7 +102,7 @@ class AboutScreen extends StatelessWidget {
                         },
                       ),
 
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                       AppInfoCard(
                         onTap: () {
                           _launchUrl(
@@ -114,7 +114,7 @@ class AboutScreen extends StatelessWidget {
                         appDescription: "Learn Japanese Language",
                         appVersion: "1.0.0",
                       ),
-                      SizedBox(height: 30),
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),

@@ -27,7 +27,7 @@ class BuildSocialButton extends StatelessWidget {
             BoxShadow(
               color: color.withOpacity(.4),
               blurRadius: 10,
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
             ),
           ],
         ),

@@ -11,7 +11,7 @@ class NameAndJobTitleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, value, child) {
         return Transform.translate(
@@ -24,15 +24,15 @@ class NameAndJobTitleSection extends StatelessWidget {
         children: [
           Text(
             userDeveloper.developerName,
-            style: TextStyle(
+            style: const TextStyle(
               color: AppColors.darkBrown,
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Container(
-            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: AppColors.aboutGradientWidget,
@@ -40,14 +40,14 @@ class NameAndJobTitleSection extends StatelessWidget {
                 BoxShadow(
                   color: AppColors.orange.withOpacity(.3),
                   blurRadius: 10,
-                  offset: Offset(0, 5),
+                  offset: const Offset(0, 5),
                 ),
               ],
             ),
 
             child: Text(
               userDeveloper.joTitle,
-              style: TextStyle(
+              style: const TextStyle(
                 color: AppColors.white,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

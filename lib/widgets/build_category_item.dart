@@ -29,10 +29,10 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
   void initState() {
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
     );
 
-    _slideAnimation = Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)
+    _slideAnimation = Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero)
         .animate(
           CurvedAnimation(
             parent: _animationController,
@@ -92,7 +92,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
           );
         },
         child: AnimatedScale(
-          duration: Duration(milliseconds: 150),
+          duration: const Duration(milliseconds: 150),
           curve: Curves.easeOutBack,
           scale: _isPressed ? 0.9 : 1.0,
           child: Container(
@@ -112,7 +112,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                 BoxShadow(
                   color: widget.categoryModel.color.withOpacity(.5),
                   blurRadius: 15,
-                  offset: Offset(0, 8),
+                  offset: const Offset(0, 8),
                 ),
               ],
             ),
@@ -145,7 +145,10 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                 ),
 
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 15,
+                  ),
                   child: Row(
                     children: [
                       Container(
@@ -161,7 +164,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                           color: AppColors.white,
                         ),
                       ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
 
                       Expanded(
                         child: Column(
@@ -170,13 +173,13 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
                           children: [
                             Text(
                               widget.categoryModel.title,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.white,
                               ),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text(
                               widget.categoryModel.subtitle,
                               style: TextStyle(

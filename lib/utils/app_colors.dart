@@ -48,17 +48,17 @@ class AppColors {
   static const Color black = Colors.black;
 
   static LinearGradient get appBarGradientWidget {
-    return LinearGradient(colors: appBarGradient);
+    return const LinearGradient(colors: appBarGradient);
   }
 
   static LinearGradient get aboutGradientWidget {
-    return LinearGradient(
+    return const LinearGradient(
       colors: [AppColors.aboutColorOne, AppColors.aboutColorTwo],
     );
   }
 
   static LinearGradient get backgroundGradientWidget {
-    return LinearGradient(
+    return const LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: backgroundGradient,

@@ -8,28 +8,28 @@ class TokuHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         gradient: AppColors.appBarGradientWidget,
         boxShadow: [
           BoxShadow(
             color: AppColors.black.withOpacity(.2),
             blurRadius: 10,
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
           ),
         ],
       ),
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: AppColors.white.withOpacity(.2),
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(Icons.school, color: AppColors.white, size: 28),
+            child: const Icon(Icons.school, color: AppColors.white, size: 28),
           ),
-          SizedBox(width: 15),
+          const SizedBox(width: 15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -48,22 +48,22 @@ class TokuHeader extends StatelessWidget {
               //     letterSpacing: 1,
               //   ),
               // ),
-              SizedBox(height: 5),
-              Text(
+              const SizedBox(height: 5),
+              const Text(
                 "Learn Japanese",
                 style: TextStyle(fontSize: 13, color: AppColors.white70),
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           IconButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AboutScreen()),
+                MaterialPageRoute(builder: (context) => const AboutScreen()),
               );
             },
-            icon: Icon(Icons.info_outline, color: AppColors.white),
+            icon: const Icon(Icons.info_outline, color: AppColors.white),
           ),
         ],
       ),

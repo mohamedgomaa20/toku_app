@@ -27,7 +27,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(seconds: 2),
+      duration: const Duration(seconds: 2),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, value, child) {
         return Transform.translate(
@@ -37,7 +37,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
       },
 
       child: AnimatedScale(
-        duration: Duration(milliseconds: 150),
+        duration: const Duration(milliseconds: 150),
         curve: Curves.bounceInOut,
 
         scale: isPressed ? 0.8 : 1,
@@ -60,7 +60,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
           },
 
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
@@ -73,7 +73,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
                 BoxShadow(
                   color: AppColors.darkBrown.withOpacity(.05),
                   blurRadius: 10,
-                  offset: Offset(0, 4),
+                  offset: const Offset(0, 4),
                 ),
               ],
             ),
@@ -81,7 +81,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
             child: Column(
               children: [
                 Icon(widget.appIcon, size: 45, color: AppColors.darkBrown),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Image.asset("assets/logo_1.png", width: 120),
                 // Text(
                 //   widget.appName,
@@ -91,7 +91,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
                 //     fontWeight: FontWeight.bold,
                 //   ),
                 // ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Text(
                   widget.appDescription,
                   style: TextStyle(
@@ -99,7 +99,7 @@ class _AppInfoCardState extends State<AppInfoCard> {
                     color: AppColors.darkBrown.withOpacity(.7),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   "Version ${widget.appVersion}",
                   style: TextStyle(

@@ -88,11 +88,11 @@ class ColorsScreen extends StatelessWidget {
                 icon: Icons.palette,
                 lengthOfList: colors.length,
               ),
-              InfoCard(color: AppColors.colorsColorOne),
+              const InfoCard(color: AppColors.colorsColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: colors.length,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: colors[index],
                     itemType: "colors",

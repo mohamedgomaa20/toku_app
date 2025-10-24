@@ -40,7 +40,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
     _slideAnimation = Tween<double>(begin: 100, end: 0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeOutBack),
@@ -82,7 +82,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
       },
 
       child: Container(
-        margin: EdgeInsets.only(bottom: 12),
+        margin: const EdgeInsets.only(bottom: 12),
         height: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -95,7 +95,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
             BoxShadow(
               color: widget.colorOne.withOpacity(0.3),
               blurRadius: 12,
-              offset: Offset(0, 6),
+              offset: const Offset(0, 6),
             ),
           ],
         ),
@@ -128,7 +128,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
             ),
             Row(
               children: [
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Container(
                   width: 60,
                   height: 60,
@@ -136,13 +136,13 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                     color: Colors.white.withOpacity(0.25),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.format_quote,
                     color: AppColors.white,
                     size: 32,
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
 
                 Expanded(
                   child: Column(
@@ -151,7 +151,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                     children: [
                       Text(
                         widget.item.jpName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -159,10 +159,10 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
 
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 10,
                           vertical: 4,
                         ),
@@ -172,7 +172,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                         ),
                         child: Text(
                           widget.item.enName,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppColors.white,
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -185,7 +185,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: GestureDetector(
                     onTap: () async {
                       HapticFeedback.lightImpact();
@@ -220,7 +220,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                     },
 
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
@@ -239,7 +239,7 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
 
                       child: AnimatedScale(
                         scale: _isPlaying ? 1.1 : 1.0,
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeOutBack,
                         child: Icon(
                           _isPlaying ? Icons.stop : Icons.play_arrow,

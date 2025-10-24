@@ -42,7 +42,7 @@ class _BuildItemState extends State<BuildItem>
 
     _animatedController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
     );
 
     _slideAnimation = Tween<double>(begin: 100, end: 0).animate(
@@ -85,7 +85,7 @@ class _BuildItemState extends State<BuildItem>
         );
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 12),
+        margin: const EdgeInsets.only(bottom: 12),
         height: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -98,7 +98,7 @@ class _BuildItemState extends State<BuildItem>
             BoxShadow(
               color: widget.colorOne.withOpacity(0.3),
               blurRadius: 12,
-              offset: Offset(0, 6),
+              offset: const Offset(0, 6),
             ),
           ],
         ),
@@ -134,7 +134,7 @@ class _BuildItemState extends State<BuildItem>
                 Container(
                   height: 100,
                   width: 100,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.creamColor,
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
@@ -142,7 +142,7 @@ class _BuildItemState extends State<BuildItem>
                     ),
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(20),
                       bottomLeft: Radius.circular(20),
                     ),
@@ -152,7 +152,7 @@ class _BuildItemState extends State<BuildItem>
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -160,16 +160,16 @@ class _BuildItemState extends State<BuildItem>
                     children: [
                       Text(
                         widget.item.jpName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.white,
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 4),
+                      const SizedBox(height: 4),
 
                       Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 10,
                           vertical: 4,
                         ),
@@ -179,7 +179,7 @@ class _BuildItemState extends State<BuildItem>
                         ),
                         child: Text(
                           widget.item.enName,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppColors.white,
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
@@ -190,7 +190,7 @@ class _BuildItemState extends State<BuildItem>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 12),
+                  padding: const EdgeInsets.only(right: 12),
                   child: GestureDetector(
                     onTap: () async {
                       HapticFeedback.lightImpact();
@@ -223,7 +223,7 @@ class _BuildItemState extends State<BuildItem>
                     },
 
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       width: 50,
                       height: 50,
                       decoration: BoxDecoration(
@@ -239,7 +239,7 @@ class _BuildItemState extends State<BuildItem>
                       ),
 
                       child: AnimatedScale(
-                        duration: Duration(milliseconds: 200),
+                        duration: const Duration(milliseconds: 200),
                         curve: Curves.easeOutBack,
                         scale: isPlaying ? 1.1 : 1.0,
                         child: Icon(

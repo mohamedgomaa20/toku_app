@@ -86,11 +86,11 @@ class NumbersScreen extends StatelessWidget {
                 icon: Icons.looks_one,
                 lengthOfList: numbers.length,
               ),
-              InfoCard(color: AppColors.numbersColorOne),
+              const InfoCard(color: AppColors.numbersColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: numbers.length,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: numbers[index],
                     itemType: "numbers",

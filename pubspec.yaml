@@ -8,7 +8,6 @@ version: 1.0.0+1
 environment:
   sdk: ^3.9.0
 
-
 dependencies:
   flutter:
     sdk: flutter
@@ -34,7 +33,7 @@ flutter_launcher_icons:
   image_path: "assets/logo_1.jpg"
 
 flutter_native_splash:
-  image: assets/logo_splash.jpg
+  image: assets/logo_1.jpg
   android: true
   ios: true
   color: '#ffffff'

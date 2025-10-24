@@ -86,11 +86,11 @@ class FamilyMembersScreen extends StatelessWidget {
                 icon: Icons.family_restroom,
                 lengthOfList: familyMembers.length,
               ),
-              InfoCard(color: AppColors.familyColorOne),
+              const InfoCard(color: AppColors.familyColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: familyMembers.length,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: familyMembers[index],
                     itemType: "family_members",

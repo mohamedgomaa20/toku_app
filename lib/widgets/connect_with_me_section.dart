@@ -21,13 +21,13 @@ class ConnectWithMeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 0, end: 1),
-      duration: Duration(milliseconds: 1800),
+      duration: const Duration(milliseconds: 1800),
       builder: (context, value, child) {
         return Opacity(opacity: value, child: child);
       },
       child: Column(
         children: [
-          Text(
+          const Text(
             "Connect With Me",
             style: TextStyle(
               fontSize: 20,
@@ -35,7 +35,7 @@ class ConnectWithMeSection extends StatelessWidget {
               color: AppColors.darkBrown,
             ),
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -44,13 +44,13 @@ class ConnectWithMeSection extends StatelessWidget {
                 icon: Icons.code,
                 onTap: onTapGithub,
               ),
-              SizedBox(width: 15),
+              const SizedBox(width: 15),
               BuildSocialButton(
                 color: AppColors.primaryBlue,
                 icon: Ionicons.logo_linkedin,
                 onTap: onTapLinkedIn,
               ),
-              SizedBox(width: 15),
+              const SizedBox(width: 15),
               BuildSocialButton(
                 color: AppColors.aboutColorOne,
                 icon: Icons.language,

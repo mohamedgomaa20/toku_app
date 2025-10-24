@@ -76,11 +76,11 @@ class PhrasesScreen extends StatelessWidget {
                 icon: Icons.chat_bubble,
                 lengthOfList: phrases.length,
               ),
-              InfoCard(color: AppColors.phrasesColorOne),
+              const InfoCard(color: AppColors.phrasesColorOne),
               Expanded(
                 child: ListView.builder(
                   itemCount: phrases.length,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildPhrasesItem(
                     item: phrases[index],
                     itemType: "phrases",

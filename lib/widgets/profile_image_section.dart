@@ -11,7 +11,7 @@ class ProfileImageSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       tween: Tween<double>(begin: 0, end: 1),
       builder: (context, value, child) {
         return Transform.scale(
@@ -32,7 +32,7 @@ class ProfileImageSection extends StatelessWidget {
             BoxShadow(
               color: AppColors.darkBrown.withOpacity(.4),
               blurRadius: 10,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
         ),

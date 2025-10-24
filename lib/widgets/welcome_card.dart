@@ -7,8 +7,8 @@ class WelcomeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -22,19 +22,23 @@ class WelcomeCard extends StatelessWidget {
           BoxShadow(
             color: AppColors.black.withOpacity(0.08),
             blurRadius: 15,
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
           ),
         ],
       ),
 
       child: Row(
         children: [
-          Icon(Icons.waving_hand, color: AppColors.aboutColorOne, size: 32),
-          SizedBox(width: 15),
+          const Icon(
+            Icons.waving_hand,
+            color: AppColors.aboutColorOne,
+            size: 32,
+          ),
+          const SizedBox(width: 15),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Welcome back!",
                 style: TextStyle(
                   fontSize: 18,
@@ -42,7 +46,7 @@ class WelcomeCard extends StatelessWidget {
                   color: AppColors.darkBrown,
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Text(
                 "Choose a category to start learning",
                 style: TextStyle(

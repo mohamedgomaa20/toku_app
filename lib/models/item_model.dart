@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class Item {
   final String? imagePath;
   final String sound;
@@ -7,7 +5,7 @@ class Item {
   final String enName;
 
   const Item({
-    @required this.imagePath,
+    this.imagePath,
     required this.jpName,
     required this.enName,
     required this.sound,

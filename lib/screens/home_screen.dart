@@ -52,12 +52,12 @@ class HomeScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              TokuHeader(),
-              SizedBox(height: 20),
-              WelcomeCard(),
-              SizedBox(height: 25),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              const TokuHeader(),
+              const SizedBox(height: 20),
+              const WelcomeCard(),
+              const SizedBox(height: 25),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -70,12 +70,17 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Expanded(
                 child: ListView.separated(
                   itemCount: categories.length,
-                  separatorBuilder: (context, index) => SizedBox(height: 15),
-                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 15),
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    bottom: 20,
+                  ),
                   itemBuilder: (context, index) => BuildCategoryItem(
                     categoryModel: categories[index],
                     delay: index * 150,

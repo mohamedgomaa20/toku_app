@@ -33,15 +33,22 @@ class TokuHeader extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Toku",
-                style: TextStyle(
-                  fontSize: 26,
-                  color: AppColors.white,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1,
-                ),
+              Image.asset(
+                "assets/logo_1.png",
+                width: 80,
+                color: AppColors.white,
               ),
+
+              // Text(
+              //   "Toku",
+              //   style: TextStyle(
+              //     fontSize: 26,
+              //     color: AppColors.white,
+              //     fontWeight: FontWeight.bold,
+              //     letterSpacing: 1,
+              //   ),
+              // ),
+              SizedBox(height: 5),
               Text(
                 "Learn Japanese",
                 style: TextStyle(fontSize: 13, color: AppColors.white70),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:toku_app/utils/app_colors.dart';
 import 'package:toku_app/widgets/app_info_card.dart';
 import 'package:toku_app/widgets/build_contact_card.dart';
 import 'package:toku_app/widgets/custom_app_bar.dart';
-import 'package:toku_app/utils/app_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../models/user_model.dart';
 import '../widgets/connect_with_me_section.dart';
 import '../widgets/name_and_job_title_section.dart';
@@ -23,6 +25,13 @@ class AboutScreen extends StatelessWidget {
     linkedin: "https://www.linkedin.com/in/mohamed-gomaa-874133284",
     website: "https://mohamedgomaa.dev",
   );
+
+  Future<void> _launchUrl(url) async {
+    Uri _url = Uri.parse(url);
+    if (await canLaunchUrl(_url)) {
+      await launchUrl(_url);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,25 +71,44 @@ class AboutScreen extends StatelessWidget {
                         icon: Icons.email,
                         title: "Email",
                         subtitle: userDeveloper.email,
-                        onTap: () {},
+                        onTap: () {
+                          _launchUrl("mailto:${userDeveloper.email}");
+                        },
                       ),
                       SizedBox(height: 15),
                       BuildContactCard(
                         icon: Icons.phone,
                         title: "Phone",
                         subtitle: userDeveloper.phone,
-                        onTap: () {},
+                        onTap: () {
+                          _launchUrl("tel:${userDeveloper.phone}");
+                        },
                       ),
                       SizedBox(height: 30),
 
                       ConnectWithMeSection(
-                        onGithub: () {},
-                        onLinkedIn: () {},
-                        onWebsite: () {},
+                        onTapGithub: () {
+                          _launchUrl("https://github.com/mohamedgomaa20");
+                        },
+                        onTapLinkedIn: () {
+                          _launchUrl(
+                            "https://www.linkedin.com/in/mohamed-gomaa-874133284",
+                          );
+                        },
+                        onTapWebsite: () {
+                          _launchUrl(
+                            "https://www.facebook.com/Mohamed.Gomaa.Nagy",
+                          );
+                        },
                       ),
 
                       SizedBox(height: 30),
                       AppInfoCard(
+                        onTap: () {
+                          _launchUrl(
+                            "https://github.com/mohamedgomaa20/toku_app",
+                          );
+                        },
                         appIcon: Icons.school,
                         appName: "Toku App",
                         appDescription: "Learn Japanese Language",

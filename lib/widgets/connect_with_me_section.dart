@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:toku_app/utils/app_colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'build_social_button.dart';
 
 class ConnectWithMeSection extends StatelessWidget {
-  const ConnectWithMeSection({
+  ConnectWithMeSection({
     super.key,
-    required this.onGithub,
-    required this.onLinkedIn,
-    required this.onWebsite,
+    required this.onTapGithub,
+    required this.onTapLinkedIn,
+    required this.onTapWebsite,
   });
 
-  final VoidCallback onGithub;
-  final VoidCallback onLinkedIn;
-  final VoidCallback onWebsite;
+  final VoidCallback onTapGithub;
+  final VoidCallback onTapLinkedIn;
+  final VoidCallback onTapWebsite;
 
   @override
   Widget build(BuildContext context) {
@@ -40,19 +42,19 @@ class ConnectWithMeSection extends StatelessWidget {
               BuildSocialButton(
                 color: AppColors.darkGray,
                 icon: Icons.code,
-                onTap: () {},
+                onTap: onTapGithub,
               ),
               SizedBox(width: 15),
               BuildSocialButton(
                 color: AppColors.primaryBlue,
-                icon: Icons.work,
-                onTap: () {},
+                icon: Ionicons.logo_linkedin,
+                onTap: onTapLinkedIn,
               ),
               SizedBox(width: 15),
               BuildSocialButton(
                 color: AppColors.aboutColorOne,
                 icon: Icons.language,
-                onTap: () {},
+                onTap: onTapWebsite,
               ),
             ],
           ),

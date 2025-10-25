@@ -40,7 +40,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
           ),
         );
 
-    _scaleAnimation = Tween<double>(begin: 0.7, end: 1.0).animate(
+    _scaleAnimation = Tween<double>(begin: 0.95, end: 1.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.elasticOut),
     );
 
@@ -94,7 +94,7 @@ class _BuildCategoryItemState extends State<BuildCategoryItem>
         child: AnimatedScale(
           duration: const Duration(milliseconds: 150),
           curve: Curves.easeOutBack,
-          scale: _isPressed ? 0.9 : 1.0,
+          scale: _isPressed ? 0.95 : 1.0,
           child: Container(
             height: 95,
             decoration: BoxDecoration(

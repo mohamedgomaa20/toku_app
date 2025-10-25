@@ -6,6 +6,12 @@ class AppColors {
     Color(0xFFFFF3E8),
     Color(0xFFFFEEDD),
   ];
+  static const List<Color> splashGradient = [
+    Color(0xFFFFFBF5),
+    Colors.white,
+    Color(0xFFFFF5E8),
+  ];
+
   static const Color appBarColorOne = Color(0xFF1A1A1A);
   static const Color appBarColorTwo = Color(0xFF2D2D2D);
   static const List<Color> appBarGradient = [appBarColorOne, appBarColorTwo];
@@ -62,6 +68,14 @@ class AppColors {
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
       colors: backgroundGradient,
+    );
+  }
+
+  static LinearGradient get splashGradientWidget {
+    return const LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: splashGradient,
     );
   }
 }

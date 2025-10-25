@@ -73,6 +73,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 15),
               Expanded(
                 child: ListView.separated(
+                  physics: const BouncingScrollPhysics(),
                   itemCount: categories.length,
                   separatorBuilder: (context, index) =>
                       const SizedBox(height: 15),

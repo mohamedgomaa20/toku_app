@@ -92,6 +92,7 @@ class ColorsScreen extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemCount: colors.length,
+                  physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: colors[index],

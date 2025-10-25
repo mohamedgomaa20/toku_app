@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toku_app/screens/home_screen.dart';
+import 'package:toku_app/screens/splash_screen.dart';
 
 void main() {
   runApp(const TokuApp());
@@ -12,7 +12,7 @@ class TokuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

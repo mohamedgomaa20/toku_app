@@ -1,4 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:toku_app/utils/app_colors.dart';
@@ -149,14 +150,14 @@ class _BuildPhrasesItemState extends State<BuildPhrasesItem>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
+                      AutoSizeText(
                         widget.item.jpName,
+                        maxLines: 2,
                         style: const TextStyle(
                           color: AppColors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
-                        maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 4),

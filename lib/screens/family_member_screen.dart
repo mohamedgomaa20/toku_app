@@ -90,6 +90,7 @@ class FamilyMembersScreen extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemCount: familyMembers.length,
+                  physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: familyMembers[index],

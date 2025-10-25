@@ -79,6 +79,7 @@ class PhrasesScreen extends StatelessWidget {
               const InfoCard(color: AppColors.phrasesColorOne),
               Expanded(
                 child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   itemCount: phrases.length,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildPhrasesItem(

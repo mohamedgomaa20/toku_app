@@ -90,6 +90,7 @@ class NumbersScreen extends StatelessWidget {
               Expanded(
                 child: ListView.builder(
                   itemCount: numbers.length,
+                  physics: const BouncingScrollPhysics(),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   itemBuilder: (context, index) => BuildItem(
                     item: numbers[index],
